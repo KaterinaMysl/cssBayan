@@ -1,17 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-
 html,
 body {
   height: 100%;
@@ -29,33 +15,35 @@ body {
   flex-direction: column;
 }
 ._container {
-  max-width: 80%;
+  max-width: 90%;
   margin: 0px auto;
   box-sizing: content-box;
 }
+.main__mem,
+.mem__item,
+.mem__title,
+.mem__picture {
+  cursor: pointer;
+}
+.mem__input {
+	display: none;
+ }
 h1 {
   font-size: 20px;
-  padding: 30px 0px 20px 0px;
+  padding: 20px 0px 15px 0px;
   color: #dedede;
   font-weight: 600;
   letter-spacing: 2px;
   text-shadow: 2px 3px 14px #40404d;
+  text-align: center;
 }
 h2 {
   padding: 0px 10px 0px 0px;
   letter-spacing: 1px;
   font-size: 14px;
 }
-
-
-
-.header {
-}
-
 .header__container {
   padding: 0px 10px;
-}
-.header__title {
 }
 .main {
   display: block;
@@ -67,91 +55,125 @@ h2 {
   background: #dedede;
   box-shadow: 2px 3px 14px #40404d;
 }
-.mem {
-}
-.mem__box {
-}
-.mem__item {
-  
-}
 .mem__title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #702934;
+  background: #762e39;
   padding: 10px 15px;
+  border: 1px solid #292933;
 }
 .mem__text {
+  display: block;
   color: #ddddfa;
+  transition: all 0.5s;
 }
-.mem__icon {
+.main__mem:hover .mem__text {
+  color: #bdbdbd;
+  text-shadow: 4px 4px 10px #27272e;
 }
-.mem__icon img {
-  width: 15px;
+.mem__i-img {
+  opacity: 0;
+  width: 20px;
+  transition: all 0.5s;
 }
-
+.mem__input:checked ~ label .mem__i-img {
+  transform: rotate(-90deg);
+}
 .mem__picture {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mem__img {
+  width: 0;
+  height: 0;
+  transition: all 0.5s;
+}
+.mem__item:active .mem__img {
+  opacity: 0.5;
+}
+.mem__input:checked ~ label .mem__img,
+.mem__item:focus .mem__img {
+  width: 80%;
+  height: 50%;
   padding: 10px 0px 10px 0px;
 }
-.mem__picture img {
-  width: 87%;
-}
 @media (min-width: 820px) {
-	._container {
-		max-width: 70%;
-		
-	 }
-	h1 {
-	  font-size: 24px;
-	  padding: 40px 0px 30px 0px;
-	  letter-spacing: 2.5px;
-	}
-	h2 {
-	 font-size: 19px;
-	 letter-spacing: 1px;
+  .main__mem,
+  .mem__item,
+  .mem__title,
+  .mem__picture {
+    cursor: pointer;
+  }
+  ._container {
+    max-width: 80%;
+  }
+  h1 {
+    font-size: 24px;
+    padding: 40px 0px 30px 0px;
+    letter-spacing: 2.5px;
+  }
+  h2 {
+    font-size: 19px;
+    letter-spacing: 1px;
   }
   .mem__title {
-	padding: 15px 20px;
+    padding: 15px 20px;
+    transition: background 0.3s ease-in;
   }
-  .mem__icon img {
-	width: 20px;
+  .mem__title:hover{
+    background: #292933;
+  }
+  .mem__i-img {
+    width: 25px;
+  }
+   .mem__item:hover .mem__i-img {
+	transform: rotate(-90deg);
  }
-
- .mem__picture img {
-	width: 50%;
+ .main__mem:hover .mem__i-img {
+	opacity: 1;
  }
- .mem__picture {
-	text-align: center;
-	padding: 20px 0px 20px 0px;
+  .mem__input:checked ~ label .mem__img,
+  .mem__item:focus .mem__img {
+    width: 65%;
+    height: 50%;
+    padding: 10px 0px 10px 0px;
+  }
+  .mem__item:hover .mem__img {
+    width: 65%;
+    height: 50%;
+	 padding: 10px 0px 10px 0px;
+  }
  }
-}
 @media (min-width: 1920px) {
-	._container {
-		max-width: 90%;
-		
-	 }
-	h1 {
-	  font-size: 26px;
-	  padding: 45px 0px 35px 0px;
-	  letter-spacing: 3px;
-	}
-	h2 {
-	 font-size: 22px;
-	 letter-spacing: 1.5px;
+  ._container {
+    max-width: 60%;
   }
-  .mem__title {
-	padding: 15px 20px;
+  .header__title {
+    padding: 0px 20px 0px 20px;
   }
-  .mem__icon img {
-	width: 30px;
- }
-
- .mem__picture img {
-	width: 25%;
- }
- .mem__picture {
-	text-align: center;
-	padding: 30px 0px 30px 0px;
- }
+  h1 {
+    font-size: 26px;
+    padding: 45px 0px 35px 0px;
+    letter-spacing: 3px;
+  }
+  h2 {
+    font-size: 22px;
+    letter-spacing: 1.5px;
+  }
+  .mem__i-img {
+    width: 30px;
+  }
+  .mem__input:checked ~ label .mem__img,
+  .mem__item:focus .mem__img {
+    width: 50%;
+    height: 50%;
+    padding: 10px 0px 10px 0px;
+  }
+  .mem__item:hover .mem__img {
+    width: 50%;
+    height: 50%;
+    padding: 10px 0px 10px 0px;
+  }
 }
