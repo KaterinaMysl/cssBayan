@@ -68,7 +68,7 @@ h2 {
 }
 .mem__text {
   display: block;
-  color: #ddddfa;
+  color: #292933;
   transition: all 0.7s;
 }
 
@@ -76,8 +76,7 @@ h2 {
   opacity: 0;
   width: 1.2rem;
   transition: all 0.7s;
-  filter: invert(70%);
-  
+  filter: invert(80%);
 }
 .mem__input:checked ~ label .mem__i-img {
   transform: rotate(-90deg);
@@ -168,7 +167,7 @@ h2 {
 @media (hover: none) {
   .main__mem:hover .mem__text {
     color: #bdbdbd;
-    text-shadow: 0.4rem 0.4rem 1rem #27272e;
+    text-shadow: 0.4rem 0.4rem 1rem #5a5a65;
   }
   .main__mem:hover .mem__i-img {
     opacity: 1;
@@ -180,7 +179,6 @@ h2 {
   }
   .main__mem:hover .mem__text {
     color: #bdbdbd;
-    text-shadow: 0.4rem 0.4rem 1rem #27272e;
   }
 
   .mem__item:hover .mem__i-img {
